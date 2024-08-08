@@ -359,9 +359,6 @@ class DepGraph(object):
 
     def find_import_cycles(self):
         def traverse(node, path):
-            if node.name in self.cyclenodes:
-                return
-
             if node.name in path:
                 # found cycle
                 cycle = path[path.index(node.name):] + [node.name]
